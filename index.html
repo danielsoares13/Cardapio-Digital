@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"/>
@@ -28,9 +29,7 @@
             </span>
 
             <div class="bg-green-600 px-4 py-1 rounded-lg mt-3 mb-9" id="date-span">
-                <span class="text-white font-medium">
-                    Seg á Sab - 18:00 as 22:00
-                </span>
+                <span class="text-white font-medium">Seg á Sab - 18:00 as 23:00</span>
             </div>
         </div>
     </header>
@@ -190,7 +189,7 @@
 
     <!--modal carrinho-->
 
-    <div class="bg-black/60 w-full h-full fixed top-0 left-0 z-{99} items-center justify-center hidden">
+    <div class="bg-black/60 w-full h-full fixed top-0 left-0 z-{99} items-center justify-center hidden" id="cart-modal">
         <div class="bg-white p-5 rounded-md min-w-[90%] md:min-w-[600px]">
             <h2 class="text-center font-bold text-2xl mb-2">Meu carrinho</h2>
 
@@ -203,7 +202,6 @@
                 id="address"
                 class="w-full border-2 p-1 rounded my-1"
             >
-            <p class="text-red-500 hidden" id="address-warn">Digite seu endereço completo</p>
 
             <div class="flex items-center justify-between mt-5 w-full">
                 <button id="close-modal-btn">Fechar</button>
@@ -223,6 +221,9 @@
         </button>
     </footer>
 
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="script.js"></script>
 
 </body>
 
