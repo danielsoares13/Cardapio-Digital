@@ -52,6 +52,21 @@ function addToCart(name, price){
     }
 
     updateCartModal()
+
+    if(addToCart){
+        Toastify({
+            text: "Item adicionado ao carrinho",
+            duration: 3000,
+            close: true,
+            gravity: "top",
+            position: "right",
+            stopOnFocus: true,
+            style: {
+              background: "#3CB371",
+            },
+        }).showToast();
+        return;
+    }
 }
 
 function updateCartModal(){
