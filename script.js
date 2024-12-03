@@ -7,9 +7,11 @@ const checkoutBtn = document.getElementById("checkout-btn")
 const closeModalBtn = document.getElementById("close-modal-btn")
 const cartCounter = document.getElementById("cart-count")
 const addressInput = document.getElementById("address")
+const footer = document.getElementById("footer")
 
 
 let cart = [];
+let cartFooterQtd = 0;
 
 cartBtn.addEventListener("click", function(){
     updateCartModal();
@@ -49,10 +51,13 @@ function addToCart(name, price){
             price,
             quantity: 1,
         })
+        
     }
 
+    cartFooterQtd += 1;
     updateCartModal()
 
+    
     if(addToCart){
         Toastify({
             text: "Item adicionado ao carrinho",
@@ -65,8 +70,11 @@ function addToCart(name, price){
               background: "#3CB371",
             },
         }).showToast();
+        
+        footer.classList.remove("hidden")
         return;
     }
+
 }
 
 function updateCartModal(){
@@ -103,7 +111,7 @@ function updateCartModal(){
         currency: "BRL"
     })
 
-    cartCounter.innerHTML = cart.length;
+    cartCounter.innerHTML = cartFooterQtd;
 }
 
 
@@ -112,8 +120,11 @@ cartItemsContainer.addEventListener("click", function(event){
         const name = event.target.getAttribute("data-name")
 
         removeItemsCart(name);
+        
     }
+    updateCartModal();
 })
+
 
 function removeItemsCart(name){
     const index = cart.findIndex(item => item.name === name);
@@ -123,14 +134,18 @@ function removeItemsCart(name){
 
         if(item.quantity > 1){
             item.quantity -= 1;
+            cartFooterQtd -= 1;
             updateCartModal();
             return;
         }
 
         cart.splice(index, 1);
+        cartFooterQtd -= 1;
         updateCartModal();
     }
+
 }
+
 
 addressInput.addEventListener("input", function(event){
     let inputValue = event.target.value;
