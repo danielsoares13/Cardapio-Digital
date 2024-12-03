@@ -70,8 +70,8 @@ function addToCart(name, price){
               background: "#3CB371",
             },
         }).showToast();
-        
-        footer.classList.remove("hidden")
+
+    
         return;
     }
 
@@ -111,7 +111,15 @@ function updateCartModal(){
         currency: "BRL"
     })
 
+    if(cartFooterQtd === 0){
+        footer.classList.add("hidden")
+    }
+    else{
+        footer.classList.remove("hidden")
+    }
+
     cartCounter.innerHTML = cartFooterQtd;
+
 }
 
 

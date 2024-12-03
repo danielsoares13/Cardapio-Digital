@@ -675,6 +675,22 @@ video {
   top: 0px;
 }
 
+.top-2 {
+  top: 0.5rem;
+}
+
+.top-auto {
+  top: auto;
+}
+
+.left-5 {
+  left: 1.25rem;
+}
+
+.-top-0 {
+  top: -0px;
+}
+
 .isolate {
   isolation: isolate;
 }
@@ -746,6 +762,11 @@ video {
   margin-bottom: 0.5rem;
 }
 
+.my-3 {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
 .mb-16 {
   margin-bottom: 4rem;
 }
@@ -788,6 +809,14 @@ video {
 
 .mt-9 {
   margin-top: 2.25rem;
+}
+
+.mb-7 {
+  margin-bottom: 1.75rem;
+}
+
+.mb-8 {
+  margin-bottom: 2rem;
 }
 
 .box-border {
@@ -899,6 +928,54 @@ video {
 
 .h-full {
   height: 100%;
+}
+
+.h-\[\] {
+  height: ;
+}
+
+.h-\[50\%\] {
+  height: 50%;
+}
+
+.max-h-\[\] {
+  max-height: ;
+}
+
+.max-h-\[90\] {
+  max-height: 90;
+}
+
+.max-h-\[90\%\] {
+  max-height: 90%;
+}
+
+.max-h-\[95\%\] {
+  max-height: 95%;
+}
+
+.max-h-\[99\%\] {
+  max-height: 99%;
+}
+
+.max-h-full {
+  max-height: 100%;
+}
+
+.max-h-\[90vh\] {
+  max-height: 90vh;
+}
+
+.max-h-\[80vh\] {
+  max-height: 80vh;
+}
+
+.max-h-\[85vh\] {
+  max-height: 85vh;
+}
+
+.min-h-\[90\%\] {
+  min-height: 90%;
 }
 
 .w-28 {
@@ -2747,6 +2824,10 @@ body{
 .hover\:before\:text-center:hover::before {
   content: var(--tw-content);
   text-align: center;
+}
+
+.focus\:overscroll-contain:focus {
+  overscroll-behavior: contain;
 }
 
 .focus\:hover\:text-center:hover:focus {
