@@ -20,7 +20,7 @@
 <body>
     <header class="w-full h-{480px} bg-home bg-cover bg-center">
         <div class="w-full h-full flex flex-col justify-center items-center">
-            <img src="./assets/439928114_417192347686022_4128698471651287438_n.jpeg" alt="Logo Espetinhos Da Liza "
+            <img src="./assets/logo-espetinho.jpeg" alt="Logo Espetinhos Da Liza "
                 class="w-32 h-32 rounded-full shadow-lg hover:scale-110 duration-200" />
             <h1 class="text-4xl mt-4 mb-2 font-bold text-white">Espetinhos Da Liza</h1>
 
@@ -135,23 +135,25 @@
 
         </main>
 
-        <div class="mx-auto max-w-7xl px-2 my-2">
-            <h2 class="font-bold text-3xl">
+        <div class="flex items-center justify-center h-screen">
+            <h2 class="font-bold text-3xl mb-8">
                 Bebidas
             </h2>
         </div>
 
-        <!--Bebidas-->
+        <!--Bebidas 1 -->
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-10 mx-auto max-w-7xl px-2 mb-16" id="menu">
+            
             <div class="flex gap-2 w-full">
-                <img src="/assets/refri-1.png" alt="Coca Lata"
+                <img src="/assets/coca-lata.png" alt="Coca Lata"
                     class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300">
 
                 <div class="w-full">
                     <p class="font-bold">Coca Lata</p>
+                    <p class="text-sm">350ml</p>
                     <div class="flex items-center gap-2 justify-between mt-3">
-                        <p class="font-bold text-lg">R$ 5</p>
+                        <p class="font-bold text-lg">R$ 5,00</p>
                         <button 
                             class="bg-gray-900 px-5 rounded add-to-cart-btn"
                             data-name="Coca Lata"
@@ -166,13 +168,80 @@
             <!--bebida 2-->
 
             <div class="flex gap-2 w-full">
-                <img src="/assets/refri-2.png" alt="Guaraná Lata"
+                <img src="/assets/coca-zero-lata.png" alt="Coca Zero Lata"
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300">
+
+                <div class="w-full">
+                    <p class="font-bold">Coca Zero Lata</p>
+                    <p class="text-sm">350ml</p>
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <p class="font-bold text-lg">R$ 5,00</p>
+                        <button 
+                            class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                            data-name="Coca Zero Lata"
+                            data-price="5"
+                            >
+                            <i class="fa-solid fa-cart-shopping text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!--bebida 3-->
+
+            <div class="flex gap-2 w-full">
+                <img src="/assets/coca-zero-600.png" alt="Coca Cola Zero 600ml"
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300">
+
+                <div class="w-full">
+                    <p class="font-bold">Coca Cola Zero</p>
+                    <p class="text-sm">600ml</p>
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <p class="font-bold text-lg">R$ 8,00</p>
+                        <button 
+                            class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                            data-name="Coca Cola Zero 600ml"
+                            data-price="8"
+                            >
+                            <i class="fa-solid fa-cart-shopping text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!--bebida 4-->
+
+            <div class="flex gap-2 w-full">
+                <img src="/assets/coca-2tl.png" alt="Coca Cola Original 2 LT"
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300">
+
+                <div class="w-full">
+                    <p class="font-bold">Coca Cola Original</p>
+                    <p class="text-sm">2 LT</p>
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <p class="font-bold text-lg">R$ 16,00</p>
+                        <button 
+                            class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                            data-name="Coca Cola Original 2 LT"
+                            data-price="16"
+                            >
+                            <i class="fa-solid fa-cart-shopping text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!--bebida 5-->
+
+            <div class="flex gap-2 w-full">
+                <img src="/assets/guarana-lata.png" alt="Guaraná Lata"
                     class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300">
 
                 <div class="w-full">
                     <p class="font-bold">Guaraná Lata</p>
+                    <p class="text-sm">350ml</p>
                     <div class="flex items-center gap-2 justify-between mt-3">
-                        <p class="font-bold text-lg">R$ 5</p>
+                        <p class="font-bold text-lg">R$ 5,00</p>
                         <button 
                             class="bg-gray-900 px-5 rounded add-to-cart-btn"
                             data-name="Guarana Lata"
@@ -183,6 +252,29 @@
                     </div>
                 </div>
             </div>
+
+             <!--bebida 6-->
+
+             <div class="flex gap-2 w-full">
+                <img src="/assets/guarana-1,5lt.png" alt="Guaraná 1.5lt"
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300">
+
+                <div class="w-full">
+                    <p class="font-bold">Guaraná antarctica</p>
+                    <p class="text-sm">1,5 LT</p>
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <p class="font-bold text-lg">R$ 11,00</p>
+                        <button 
+                            class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                            data-name="Guaraná antarctica 1,5 Lt"
+                            data-price="11"
+                            >
+                            <i class="fa-solid fa-cart-shopping text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
     </div>
