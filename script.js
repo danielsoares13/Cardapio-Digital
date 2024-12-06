@@ -29,6 +29,23 @@ closeModalBtn.addEventListener("click", function(){
 })
 
 menu.addEventListener("click", function(event){
+    const isOpen = checkRestaurantOpen();
+
+    if(!isOpen){
+        Toastify({
+            text: "Ops, O restaurante está fechado neste horário",
+            duration: 3000,
+            close: true,
+            gravity: "top",
+            position: "right",
+            stopOnFocus: true,
+            style: {
+              background: "#ef4444",
+            },
+        }).showToast();
+        return;
+    }
+
     let parentButton = event.target.closest(".add-to-cart-btn")
 
     if(parentButton){
@@ -111,11 +128,11 @@ function updateCartModal(){
         currency: "BRL"
     })
 
-    if(cartFooterQtd === 0){
-        footer.classList.add("hidden")
+    if(cartFooterQtd !== 0){
+        footer.classList.remove("hidden")
     }
     else{
-        footer.classList.remove("hidden")
+        footer.classList.add("hidden")
     }
 
     cartCounter.innerHTML = cartFooterQtd;
@@ -164,23 +181,6 @@ addressInput.addEventListener("input", function(event){
 })
 
 checkoutBtn.addEventListener("click", function(){
-    const isOpen = checkRestaurantOpen();
-
-    if(!isOpen){
-        Toastify({
-            text: "Ops, O restaurante está fechado neste horário",
-            duration: 3000,
-            close: true,
-            gravity: "top",
-            position: "right",
-            stopOnFocus: true,
-            style: {
-              background: "#ef4444",
-            },
-        }).showToast();
-        return;
-    }
-
     if(cart.length === 0) return;
     if(addressInput.value === ""){
         addressInput.classList.add("border-red-500", "placeholder-red-300")
@@ -190,16 +190,25 @@ checkoutBtn.addEventListener("click", function(){
 
     const cartItems = cart.map((item) => {
         return (
-            `${item.name} Quantidade: (${item.quantity}) Preço: R$${item.price} |`
+            `*${item.name}* \n Quantidade: ${item.quantity} \n Preço Unitário: R$ ${item.price.toFixed(2)} \n Subtotal: R$ ${(item.price * item.quantity).toFixed(2)} \n `
         )
-    }).join("")
+    }).join("\n\n")
 
-    const message = encodeURIComponent(cartItems)
+    const total = cart.reduce((acc, item) => acc + (item.price * item.quantity), 0).toFixed(2);
+    
+    const message = encodeURIComponent(`Olá, gostaria de fazer o seguinte pedido: \n\n ${cartItems} \n *Total: R$ ${total}* \n\n *Endereço de entrega:* ${addressInput.value}`)
+    
     const phone =  "63999537447"
 
     window.open(`https://wa.me/${phone}?text=${message} Endereço: ${addressInput.value}`, "_blank")
 
     cart = [];
+    addressInput.value = "";
+    cartFooterQtd = 0;
+    if(cartFooterQtd === 0){
+        footer.classList.add("hidden")
+    }
+    
     updateCartModal();
 
 })
