@@ -8,6 +8,7 @@ const closeModalBtn = document.getElementById("close-modal-btn")
 const cartCounter = document.getElementById("cart-count")
 const addressInput = document.getElementById("address")
 const footer = document.getElementById("footer")
+const userName = document.getElementById("user-name")
 
 
 let cart = [];
@@ -171,6 +172,13 @@ function removeItemsCart(name){
 
 }
 
+userName.addEventListener("input", function(event){
+    let inputNameValue = event.target.value;
+
+    if(inputNameValue !== ""){
+        userName.classList.remove("border-red-500", "placeholder-red-300")
+    }
+})
 
 addressInput.addEventListener("input", function(event){
     let inputValue = event.target.value;
@@ -182,7 +190,9 @@ addressInput.addEventListener("input", function(event){
 
 checkoutBtn.addEventListener("click", function(){
     if(cart.length === 0) return;
-    if(addressInput.value === ""){
+
+    if(userName.value === "" &&  addressInput.value === ""){
+        userName.classList.add("border-red-500", "placeholder-red-300")
         addressInput.classList.add("border-red-500", "placeholder-red-300")
         return;
     }
@@ -196,13 +206,14 @@ checkoutBtn.addEventListener("click", function(){
 
     const total = cart.reduce((acc, item) => acc + (item.price * item.quantity), 0).toFixed(2);
     
-    const message = encodeURIComponent(`Olá, gostaria de fazer o seguinte pedido: \n\n ${cartItems} \n *Total: R$ ${total}* \n\n *Endereço de entrega:* ${addressInput.value}`)
+    const message = encodeURIComponent(`Olá, me chamo ${userName.value} gostaria de fazer o seguinte pedido: \n\n ${cartItems} \n *Total: R$ ${total}* \n\n *Endereço de entrega:* ${addressInput.value}`)
     
     const phone =  "63999537447"
 
     window.open(`https://wa.me/${phone}?text=${message} Endereço: ${addressInput.value}`, "_blank")
 
     cart = [];
+    userName.value = "";
     addressInput.value = "";
     cartFooterQtd = 0;
     if(cartFooterQtd === 0){
