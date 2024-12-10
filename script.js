@@ -29,6 +29,28 @@ closeModalBtn.addEventListener("click", function(){
     cartModal.style.display = "none"
 })
 
+document.addEventListener("DOMContentLoaded", () => {
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const products = document.querySelectorAll("[data-category]");
+
+    filterButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            const filter = button.getAttribute("data-filter");
+
+            products.forEach(product => {
+                // Mostrar ou esconder produtos com base no filtro
+                if (filter === "all" || product.getAttribute("data-category") === filter) {
+                    product.style.display = "flex";
+                } else {
+                    product.style.display = "none";
+                }
+            });
+        });
+    });
+});
+
+
+
 menu.addEventListener("click", function(event){
     const isOpen = checkRestaurantOpen();
 

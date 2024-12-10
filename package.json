@@ -11,5 +11,8 @@
   "description": "",
   "devDependencies": {
     "tailwindcss": "^3.4.15"
+  },
+  "dependencies": {
+    "tailwind-scrollbar-hide": "^1.1.7"
   }
 }

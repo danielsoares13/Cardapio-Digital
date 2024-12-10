@@ -38,12 +38,48 @@
         Conheça nosso Menu
     </h2>
 
+<!-- Container dos Botões -->
+<div class="overflow-hidden">
+    <!-- Botões de filtro -->
+    <div class="flex justify-center gap-2 my-6 w-full overflow-x-auto scrollbar-hide">
+        <button 
+            class="px-5 py-2 bg-red-900 text-white rounded-full hover:bg-red-950 filter-btn" 
+            data-filter="all">
+            Todos
+        </button>
+        <button 
+            class="px-5 py-2 bg-red-900 text-white rounded-full hover:bg-red-950 filter-btn" 
+            data-filter="Lanches">
+            Lanches
+        </button>
+        <button 
+            class="px-5 py-2 bg-red-900 text-white rounded-full hover:bg-red-950 filter-btn" 
+            data-filter="refrigerantes">
+            Refrigerantes
+        </button>
+        <button 
+            class="px-5 py-2 bg-red-900 text-white rounded-full hover:bg-red-950 filter-btn" 
+            data-filter="cervejas">
+            Cervejas
+        </button>
+        
+    </div>
+  </div>
+  
+
+<div class="flex items-center justify-center mb-12 mt-12">
+    <h2 class="font-bold text-3xl" data-category="Lanches">
+        Lanches
+    </h2>
+</div>
+
+
     <div id="menu">
         <main class="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-10 mx-auto max-w-7xl px-2 mb-14">
             
             <!--Primeiro produto-->
             
-            <div class="flex gap-2">
+            <div class="flex gap-2" data-category="Lanches">
                 <img src="/assets/hamb-1.png" alt="Hanburguer Smash"
                     class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300">
 
@@ -66,7 +102,7 @@
 
             <!--segundo produto-->
 
-            <div class="flex gap-2">
+            <div class="flex gap-2" data-category="Lanches">
                 <img src="/assets/hamb-2.png" alt="Hanburguer Duplo"
                     class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300">
 
@@ -89,7 +125,7 @@
 
             <!--terceiro produto-->
 
-            <div class="flex gap-2">
+            <div class="flex gap-2" data-category="Lanches">
                 <img src="/assets/hamb-3.png" alt="Hanburguer Salad"
                     class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300">
 
@@ -112,7 +148,7 @@
 
             <!--quarto produto-->
 
-            <div class="flex gap-2">
+            <div class="flex gap-2" data-category="Lanches">
                 <img src="/assets/hamb-4.png" alt="Hanburguer da casa"
                     class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300">
 
@@ -135,7 +171,7 @@
 
         </main>
 
-        <div class="flex items-center justify-center mb-12">
+        <div class="flex items-center justify-center mb-12" data-category="refrigerantes">
             <h2 class="font-bold text-3xl">
                 Refrigerantes
             </h2>
@@ -147,7 +183,7 @@
             
             <!--Coca Lata-->
 
-            <div class="flex gap-2 w-full">
+            <div class="flex gap-2 w-full" data-category="refrigerantes">
                 <img src="/assets/coca-lata.png" alt="Coca Lata"
                     class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300">
 
@@ -169,7 +205,7 @@
 
             <!--Coca Zero Lata-->
 
-            <div class="flex gap-2 w-full">
+            <div class="flex gap-2 w-full" data-category="refrigerantes">
                 <img src="/assets/coca-zero-lata.png" alt="Coca Zero Lata"
                     class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300">
 
@@ -191,7 +227,7 @@
 
             <!--Coca Cola 600ml-->
 
-            <div class="flex gap-2 w-full">
+            <div class="flex gap-2 w-full" data-category="refrigerantes">
                 <img src="/assets/coca-600.png" alt="Coca Cola 600ml"
                     class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300">
 
@@ -213,7 +249,7 @@
 
             <!--Coca Cola Zero 600ml-->
 
-            <div class="flex gap-2 w-full">
+            <div class="flex gap-2 w-full" data-category="refrigerantes">
                 <img src="/assets/coca-zero-600.png" alt="Coca Cola Zero 600ml"
                     class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300">
 
@@ -235,7 +271,7 @@
 
             <!--Coca Cola 1,5lt-->
 
-            <div class="flex gap-2 w-full">
+            <div class="flex gap-2 w-full" data-category="refrigerantes">
                 <img src="/assets/coca-1.5lt.png" alt="Coca Cola Original 1,5lt"
                     class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300">
 
@@ -257,7 +293,7 @@
 
             <!--Coca Cola Original 2 LT-->
 
-            <div class="flex gap-2 w-full">
+            <div class="flex gap-2 w-full" data-category="refrigerantes">
                 <img src="/assets/coca-2tl.png" alt="Coca Cola Original 2 LT"
                     class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300">
 
@@ -279,7 +315,7 @@
 
             <!--Guaraná Lata-->
 
-            <div class="flex gap-2 w-full">
+            <div class="flex gap-2 w-full" data-category="refrigerantes">
                 <img src="/assets/guarana-lata.png" alt="Guaraná Lata"
                     class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300">
 
@@ -301,7 +337,7 @@
 
              <!--Guaraná 1lt-->
 
-            <div class="flex gap-2 w-full">
+            <div class="flex gap-2 w-full" data-category="refrigerantes">
                 <img src="/assets/guarana-1lt.png" alt="Guaraná 1lt"
                     class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300">
 
@@ -323,7 +359,7 @@
 
              <!--Guaraná 1.5lt-->
 
-            <div class="flex gap-2 w-full">
+            <div class="flex gap-2 w-full" data-category="refrigerantes">
                 <img src="/assets/guarana-1,5lt.png" alt="Guaraná 1.5lt"
                     class="w-28 h-28 mx-5 rounded-md hover:scale-110 hover:-rotate-2 duration-300">
 
@@ -345,7 +381,7 @@
 
              <!--H2O limao-->
 
-             <div class="flex gap-2 w-full">
+             <div class="flex gap-2 w-full" data-category="refrigerantes">
                 <img src="/assets/h2o.png" alt="H2O Limão"
                     class="w-27 h-28 mx-8 rounded-md hover:scale-110 hover:-rotate-2 duration-300">
 
@@ -368,7 +404,7 @@
 
         </div>
 
-        <div class="flex items-center justify-center mb-14">
+        <div class="flex items-center justify-center mb-14" data-category="cervejas">
             <h2 class="font-bold text-3xl">
                 Cervejas
             </h2>
@@ -380,7 +416,7 @@
            
             <!--Amstel Lata-->
 
-            <div class="flex gap-2 w-full">
+            <div class="flex gap-2 w-full" data-category="cervejas">
                 <img src="/assets/amstel-lata.png" alt="Amstel Lata"
                     class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300">
 
@@ -402,7 +438,7 @@
 
             <!--Antarctica Lata-->
 
-            <div class="flex gap-2 w-full">
+            <div class="flex gap-2 w-full" data-category="cervejas">
                 <img src="/assets/antarctica-lata.png" alt="Antarctica Lata"
                     class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300">
 
@@ -424,7 +460,7 @@
 
             <!--Antarctica Original Lata-->
 
-            <div class="flex gap-2 w-full">
+            <div class="flex gap-2 w-full" data-category="cervejas">
                 <img src="/assets/antarctica-original-lata.png" alt="Antarctica Original Lata"
                     class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300">
 
@@ -446,7 +482,7 @@
 
             <!--Brahma Zero lata-->
 
-            <div class="flex gap-2 w-full">
+            <div class="flex gap-2 w-full" data-category="cervejas">
                 <img src="/assets/Brahma-zero-lata.png" alt="Brahma Zero lata"
                     class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300">
 
@@ -468,7 +504,7 @@
 
             <!--Heineken Long Neck-->
 
-            <div class="flex gap-2 w-full">
+            <div class="flex gap-2 w-full" data-category="cervejas">
                 <img src="/assets/heineken-long-neck.png" alt="Heineken Long Neck"
                     class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300">
 
@@ -490,7 +526,7 @@
 
             <!--Kaiser Lata-->
 
-            <div class="flex gap-2 w-full">
+            <div class="flex gap-2 w-full" data-category="cervejas">
                 <img src="/assets/kaiser_lata_350ml.png" alt="Kaiser Lata"
                     class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300">
 
