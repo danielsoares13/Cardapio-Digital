@@ -113,66 +113,77 @@ function addToCart(name, price){
             },
         }).showToast();
 
-    
+
         return;
     }
 
 }
 
-function updateCartModal(){
+function updateCartModal() {
     cartItemsContainer.innerHTML = "";
     let total = 0;
 
     cart.forEach(item => {
         const cartItemsElement = document.createElement("div");
-        cartItemsElement.classList.add("flex", "justify-between", "mb-4", "flex-col")
+        cartItemsElement.classList.add("flex", "justify-between", "mb-4", "flex-col");
 
         cartItemsElement.innerHTML = `
-        <div class = "flex items-center justify-between">
+        <div class="flex items-center justify-between">
             <div>
-                <p class = "font-medium">${item.name}</p>
-                <p>Qtd: ${item.quantity}</p>
-                <p class = "font-medium mt-2">R$ ${item.price.toFixed(2)}</p>
+                <p class="font-medium">${item.name}</p>
+                <p>
+                    <button class="decrease-quantity-btn text-red-500" data-name="${item.name}">-</button>
+                    Qtd: ${item.quantity}
+                    <button class="increase-quantity-btn text-green-600" data-name="${item.name}">+</button>
+                </p>
+                <p class="font-medium mt-2">R$ ${item.price.toFixed(2)}</p>
             </div>
-
-            <button class="remove-from-cart-btn" data-name="${item.name}">
-                Remover
-            </button>
-            
+            <button class="remove-from-cart-btn" data-name="${item.name}">Remover</button>
         </div>
-        
-        `
+        `;
 
         total += item.price * item.quantity;
 
-        cartItemsContainer.appendChild(cartItemsElement)
-    })
+        cartItemsContainer.appendChild(cartItemsElement);
+    });
 
     cartTotal.textContent = total.toLocaleString("pt-BR", {
         style: "currency",
         currency: "BRL"
-    })
+    });
 
-    if(cartFooterQtd !== 0){
-        footer.classList.remove("hidden")
-    }
-    else{
-        footer.classList.add("hidden")
-    }
-
-    cartCounter.innerHTML = cartFooterQtd;
-
+    footer.classList.toggle("hidden", cartFooterQtd === 0);
+    cartCounter.textContent = cartFooterQtd;
 }
 
 
 cartItemsContainer.addEventListener("click", function(event){
-    if(event.target.classList.contains("remove-from-cart-btn")){
-        const name = event.target.getAttribute("data-name")
+    const name = event.target.getAttribute("data-name")
 
-        removeItemsCart(name);
-        
+    if (event.target.classList.contains("increase-quantity-btn")) {
+        const item = cart.find(item => item.name === name);
+        if (item) {
+            item.quantity += 1;
+            cartFooterQtd += 1;
+            updateCartModal();
+        }
     }
-    updateCartModal();
+
+    if (event.target.classList.contains("decrease-quantity-btn")) {
+        const item = cart.find(item => item.name === name);
+        if (item && item.quantity > 1) {
+            item.quantity -= 1;
+            cartFooterQtd -= 1;
+            updateCartModal();
+        } else if (item) {
+            removeItemsCart(name);
+        }
+    }
+
+    if(event.target.classList.contains("remove-from-cart-btn")){
+        removeItemsCart(name);
+        updateCartModal();
+    }
 })
 
 
