@@ -38,11 +38,13 @@ document.addEventListener("DOMContentLoaded", () => {
             const filter = button.getAttribute("data-filter");
 
             products.forEach(product => {
-                // Mostrar ou esconder produtos com base no filtro
-                if (filter === "all" || product.getAttribute("data-category") === filter) {
-                    product.style.display = "flex";
+                const category = product.getAttribute("data-category");
+                if (filter === "all" || category === filter) {
+                    product.classList.add("visible");
+                    product.classList.remove("hidden");
                 } else {
-                    product.style.display = "none";
+                    product.classList.add("hidden");
+                    product.classList.remove("visible");
                 }
             });
         });
