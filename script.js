@@ -121,7 +121,7 @@ function addToCart(name, price){
 
 function updateCartModal() {
     cartItemsContainer.innerHTML = "";
-    let total = 0;
+    let total = 5;
 
     cart.forEach(item => {
         const cartItemsElement = document.createElement("div");
@@ -266,7 +266,7 @@ checkoutBtn.addEventListener("click", function(){
 function checkRestaurantOpen(){
     const data = new Date();
     const hora = data.getHours();
-    return hora >= 18 && hora < 23;
+    return hora >= 18 && hora < 24;
 }
 
 const spanItem = document.getElementById("date-span")
