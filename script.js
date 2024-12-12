@@ -119,9 +119,13 @@ function addToCart(name, price){
 
 }
 
+document.getElementById("pickup-option").addEventListener("change", updateCartModal);
+document.getElementById("delivery-option").addEventListener("change", updateCartModal);
+
 function updateCartModal() {
     cartItemsContainer.innerHTML = "";
-    let total = 5;
+    let total = 0;
+    const deliveryFee = 5;
 
     cart.forEach(item => {
         const cartItemsElement = document.createElement("div");
@@ -150,6 +154,11 @@ function updateCartModal() {
         cartItemsContainer.appendChild(cartItemsElement);
     });
 
+    const isDelivery = document.getElementById("delivery-option").checked;
+    if (isDelivery) {
+        total += deliveryFee;
+    }
+
     cartTotal.textContent = total.toLocaleString("pt-BR", {
         style: "currency",
         currency: "BRL"
@@ -158,6 +167,7 @@ function updateCartModal() {
     footer.classList.toggle("hidden", cartFooterQtd === 0);
     cartCounter.textContent = cartFooterQtd;
 }
+
 
 
 cartItemsContainer.addEventListener("click", function(event){
@@ -226,41 +236,44 @@ addressInput.addEventListener("input", function(event){
     }
 })
 
-checkoutBtn.addEventListener("click", function(){
-    if(cart.length === 0) return;
+checkoutBtn.addEventListener("click", function() {
+    if (cart.length === 0) return;
 
-    if(userName.value === "" &&  addressInput.value === ""){
-        userName.classList.add("border-red-500", "placeholder-red-300")
-        addressInput.classList.add("border-red-500", "placeholder-red-300")
+    const isDelivery = document.getElementById("delivery-option").checked;
+
+    if (userName.value === "" || (isDelivery && addressInput.value === "")) {
+        userName.classList.add("border-red-500", "placeholder-red-300");
+        if (isDelivery) {
+            addressInput.classList.add("border-red-500", "placeholder-red-300");
+        }
         return;
     }
 
-
-    const cartItems = cart.map((item) => {
+    const cartItems = cart.map(item => {
         return (
-            `*${item.name}* \n Quantidade: ${item.quantity} \n Preço Unitário: R$ ${item.price.toFixed(2)} \n Subtotal: R$ ${(item.price * item.quantity).toFixed(2)} \n `
-        )
-    }).join("\n\n")
+            `*${item.name}* \n Quantidade: ${item.quantity} \n Preço Unitário: R$ ${item.price.toFixed(2)}`
+        );
+    }).join("\n\n");
 
-    const total = cart.reduce((acc, item) => acc + (item.price * item.quantity), 0).toFixed(2);
-    
-    const message = encodeURIComponent(`Olá, me chamo ${userName.value} gostaria de fazer o seguinte pedido: \n\n ${cartItems} \n *Total: R$ ${total}* \n\n *Endereço de entrega:* ${addressInput.value}`)
-    
-    const phone =  "63999537447"
+    const total = cart.reduce((acc, item) => acc + (item.price * item.quantity), 0);
+    const finalTotal = isDelivery ? total + 5 : total;
+    const deliveryText = isDelivery ? `\n\n *Endereço de entrega:* ${addressInput.value}` : "\n\n *Modo:* Retirar no local";
 
-    window.open(`https://wa.me/${phone}?text=${message} Endereço: ${addressInput.value}`, "_blank")
+    const message = encodeURIComponent(`Olá, me chamo ${userName.value}, gostaria de fazer o seguinte pedido: \n\n ${cartItems} \n\n *Total: R$ ${finalTotal.toFixed(2)}*${deliveryText}`);
+
+    const phone = "63999537447";
+    window.open(`https://wa.me/${phone}?text=${message}`, "_blank");
 
     cart = [];
     userName.value = "";
     addressInput.value = "";
     cartFooterQtd = 0;
-    if(cartFooterQtd === 0){
-        footer.classList.add("hidden")
+    if (cartFooterQtd === 0) {
+        footer.classList.add("hidden");
     }
-    
-    updateCartModal();
 
-})
+    updateCartModal();
+});
 
 
 function checkRestaurantOpen(){
