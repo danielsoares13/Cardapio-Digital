@@ -128,15 +128,18 @@ function updateCartModal() {
         cartItemsElement.classList.add("flex", "justify-between", "mb-4", "flex-col");
 
         cartItemsElement.innerHTML = `
-        <div class="flex items-center justify-between">
+        <div class="flex items-center justify-between mt-3">
             <div>
                 <p class="font-medium">${item.name}</p>
-                <p>
-                    <button class="decrease-quantity-btn text-red-500" data-name="${item.name}">-</button>
-                    Qtd: ${item.quantity}
-                    <button class="increase-quantity-btn text-green-600" data-name="${item.name}">+</button>
-                </p>
-                <p class="font-medium mt-2">R$ ${item.price.toFixed(2)}</p>
+                <div class="flex items-center justify-center">
+                    <p>
+                        <button class="decrease-quantity-btn mt-2 text-red-500" data-name="${item.name}">-</button>
+                        Qtd: ${item.quantity}
+                        <button class="increase-quantity-btn text-green-600" data-name="${item.name}">+</button>
+                    </p>
+                    <p class="font-medium mt-2 ml-6">R$ ${item.price.toFixed(2)}</p>
+                </div>
+                
             </div>
             <button class="remove-from-cart-btn" data-name="${item.name}">Remover</button>
         </div>

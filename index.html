@@ -54,6 +54,11 @@
         </button>
         <button 
             class="flex-shrink-0 px-5 py-2 bg-red-900 text-white rounded-full hover:bg-red-950 filter-btn" 
+            data-filter="Porções">
+            Porções
+        </button>
+        <button 
+            class="flex-shrink-0 px-5 py-2 bg-red-900 text-white rounded-full hover:bg-red-950 filter-btn" 
             data-filter="refrigerantes">
             Refrigerantes
         </button>
@@ -75,7 +80,7 @@
 
     <div id="menu">
 
-        <main class="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-10 mx-auto max-w-7xl px-2 mb-14" data-category="Lanches">
+        <main class="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-10 mx-auto max-w-7xl px-2 mb-16" data-category="Lanches">
             
             <!--Primeiro produto-->
             
@@ -171,6 +176,238 @@
 
         </main>
 
+        <div class="flex items-center justify-center mb-14 mt-9" data-category="Porções">
+            <h2 class="font-bold text-3xl">
+                Porções
+            </h2>
+        </div>
+
+        <!--Porções-->
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-10 mx-auto max-w-7xl px-2 mb-16" data-category="Porções">
+            
+            <!--Batata Frita M-->
+
+            <div class="flex gap-2 w-full">
+                <img src="/assets/porção-batata-frita-m.png" alt="Batata Frita"
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300">
+
+                <div class="w-full">
+                    <p class="font-bold">Batata Frita M</p>
+                    <p class="text-sm">250g</p>
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <p class="font-bold text-lg">R$ 15,00</p>
+                        <button 
+                            class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                            data-name="Batata Frita 250g"
+                            data-price="15"
+                            >
+                            <i class="fa-solid fa-cart-shopping text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!--Batata Frita G-->
+
+            <div class="flex gap-2 w-full">
+                <img src="/assets/porção-batata-frita-g.png" alt="Batata Frita"
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300">
+
+                <div class="w-full">
+                    <p class="font-bold">Batata Frita G</p>
+                    <p class="text-sm">500g</p>
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <p class="font-bold text-lg">R$ 25,00</p>
+                        <button 
+                            class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                            data-name="Batata Frita 500g"
+                            data-price="25"
+                            >
+                            <i class="fa-solid fa-cart-shopping text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!--Frango Frito-->
+
+            <div class="flex gap-2 w-full">
+                <img src="/assets/porção-frango-frito.png" alt="Frango Frito"
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300">
+
+                <div class="w-full">
+                    <p class="font-bold">Frango Frito</p>
+                    <p class="text-sm">500g</p>
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <p class="font-bold text-lg">R$ 35,00</p>
+                        <button 
+                            class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                            data-name="Frango Frito 500g"
+                            data-price="35"
+                            >
+                            <i class="fa-solid fa-cart-shopping text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!--Calabresa-->
+
+            <div class="flex gap-2 w-full">
+                <img src="/assets/porção-calabresa.png" alt="Porção de Calabresa"
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300">
+
+                <div class="w-full">
+                    <p class="font-bold">Calabresa Acebolada</p>
+                    <p class="text-sm">500g</p>
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <p class="font-bold text-lg">R$ 35,00</p>
+                        <button 
+                            class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                            data-name="Calabresa Acebolada 500g"
+                            data-price="35"
+                            >
+                            <i class="fa-solid fa-cart-shopping text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!--Feijão Tropeiro M-->
+
+            <div class="flex gap-2 w-full" data-category="refrigerantes">
+                <img src="/assets/porção-feijão.png" alt="Feijão Tropeiro"
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300">
+
+                <div class="w-full">
+                    <p class="font-bold">Feijão Tropeiro M</p>
+                    <p class="text-sm">200g</p>
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <p class="font-bold text-lg">R$ 10,00</p>
+                        <button 
+                            class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                            data-name="Feijão Tropeiro 200g"
+                            data-price="10"
+                            >
+                            <i class="fa-solid fa-cart-shopping text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!--Feijão Tropeiro G-->
+
+            <div class="flex gap-2 w-full" data-category="refrigerantes">
+                <img src="/assets/porção-feijão.png" alt="Feijão Tropeiro"
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300">
+
+                <div class="w-full">
+                    <p class="font-bold">Feijão Tropeiro G</p>
+                    <p class="text-sm">380g</p>
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <p class="font-bold text-lg">R$ 10,00</p>
+                        <button 
+                            class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                            data-name="Feijão Tropeiro 200g"
+                            data-price="10"
+                            >
+                            <i class="fa-solid fa-cart-shopping text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!--Mandioca Cozida-->
+
+            <div class="flex gap-2 w-full">
+                <img src="/assets/porção-mandioca.png" alt="Mandioca Cozida"
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300">
+
+                <div class="w-full">
+                    <p class="font-bold">Mandioca Cozida</p>
+                    <p class="text-sm">200g</p>
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <p class="font-bold text-lg">R$ 10,00</p>
+                        <button 
+                            class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                            data-name="Mandioca Cozida 200g"
+                            data-price="10"
+                            >
+                            <i class="fa-solid fa-cart-shopping text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!--Arroz-->
+
+            <div class="flex gap-2 w-full">
+                <img src="/assets/porção-arroz.png" alt="Arroz"
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300">
+
+                <div class="w-full">
+                    <p class="font-bold">Arroz Soltinho</p>
+                    <p class="text-sm">250g</p>
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <p class="font-bold text-lg">R$ 7,00</p>
+                        <button 
+                            class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                            data-name="Arroz Soltinho 250g"
+                            data-price="7"
+                            >
+                            <i class="fa-solid fa-cart-shopping text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+             <!--Vinagrete-->
+
+            <div class="flex gap-2 w-full">
+                <img src="/assets/porção-vinagrete.png" alt="Vinagrete"
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300">
+
+                <div class="w-full">
+                    <p class="font-bold">Vinagrete</p>
+                    <p class="text-sm">150g</p>
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <p class="font-bold text-lg">R$ 4,00</p>
+                        <button 
+                            class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                            data-name="Vinagrete 150g"
+                            data-price="4"
+                            >
+                            <i class="fa-solid fa-cart-shopping text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+             <!--Creme de alho-->
+
+            <div class="flex gap-2 w-full">
+                <img src="/assets/porção-creme-de-alho.png" alt="Creme de alho"
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300">
+
+                <div class="w-full">
+                    <p class="font-bold">Creme de alho</p>
+                    <p class="text-sm">20g</p>
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <p class="font-bold text-lg">R$ 1,00</p>
+                        <button 
+                            class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                            data-name="Guaraná antarctica 1,5 Lt"
+                            data-price="1"
+                            >
+                            <i class="fa-solid fa-cart-shopping text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
         <div class="flex items-center justify-center mb-14 mt-9" data-category="refrigerantes">
             <h2 class="font-bold text-3xl">
                 Refrigerantes
@@ -179,7 +416,7 @@
 
         <!--Refrigerantes-->
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-10 mx-auto max-w-7xl px-2 mb-12" data-category="refrigerantes">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-10 mx-auto max-w-7xl px-2 mb-16" data-category="refrigerantes">
             
             <!--Coca Lata-->
 
