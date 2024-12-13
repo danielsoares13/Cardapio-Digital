@@ -132,21 +132,21 @@ function updateCartModal() {
         cartItemsElement.classList.add("flex", "justify-between", "mb-4", "flex-col");
 
         cartItemsElement.innerHTML = `
-        <div class="flex items-center justify-between mt-3">
-            <div>
-                <p class="font-medium">${item.name}</p>
-                <div class="flex items-center justify-center">
-                    <p>
-                        <button class="decrease-quantity-btn mt-2 text-red-500" data-name="${item.name}">-</button>
-                        Qtd: ${item.quantity}
-                        <button class="increase-quantity-btn text-green-600" data-name="${item.name}">+</button>
-                    </p>
-                    <p class="font-medium mt-2 ml-6">R$ ${item.price.toFixed(2)}</p>
-                </div>
-                
+        <div class="items-center mt-3">
+            
+            <p class="font-medium">${item.name}</p>
+            
+            <div class="flex items-center content-center justify-between">
+
+                <p class="font-medium mt-2">R$ ${item.price.toFixed(2)}</p>
+
+                <p class="mr-4 items-center justify-center">
+                    <button class="decrease-quantity-btn font-bold rounded-full w-6 h-6 mr-2 text-white bg-red-400 hover:bg-red-500 focus:ring focus:ring-red-300 transition-all shadow-md" data-name="${item.name}">-</button>
+                        <span class="items-center">Qtd: ${item.quantity}</span>
+                    <button class="increase-quantity-btn font-bold rounded-full w-6 h-6 ml-2 text-white bg-green-400 hover:bg-green-500 focus:ring focus:ring-green-300 transition-all shadow-md" data-name="${item.name}">+</button>
+                </p>
             </div>
-            <button class="remove-from-cart-btn" data-name="${item.name}">Remover</button>
-        </div>
+        </div>    
         `;
 
         total += item.price * item.quantity;
