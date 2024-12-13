@@ -291,7 +291,7 @@ checkoutBtn.addEventListener("click", function() {
     if (cartFooterQtd === 0) {
         footer.classList.add("hidden");
     }
-
+    cartModal.style.display = "none"
     updateCartModal();
 });
 
