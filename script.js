@@ -9,6 +9,10 @@ const cartCounter = document.getElementById("cart-count")
 const addressInput = document.getElementById("address")
 const footer = document.getElementById("footer")
 const userName = document.getElementById("user-name")
+const pickupOption = document.getElementById("pickup-option");
+const deliveryOption = document.getElementById("delivery-option");
+const addressName = document.getElementById("addressname")
+
 
 
 let cart = [];
@@ -119,8 +123,8 @@ function addToCart(name, price){
 
 }
 
-document.getElementById("pickup-option").addEventListener("change", updateCartModal);
-document.getElementById("delivery-option").addEventListener("change", updateCartModal);
+pickupOption.addEventListener("change", updateCartModal);
+deliveryOption.addEventListener("change", updateCartModal);
 
 function updateCartModal() {
     cartItemsContainer.innerHTML = "";
@@ -167,7 +171,6 @@ function updateCartModal() {
     footer.classList.toggle("hidden", cartFooterQtd === 0);
     cartCounter.textContent = cartFooterQtd;
 }
-
 
 
 cartItemsContainer.addEventListener("click", function(event){
@@ -235,6 +238,23 @@ addressInput.addEventListener("input", function(event){
         addressInput.classList.remove("border-red-500", "placeholder-red-300")
     }
 })
+
+pickupOption.addEventListener("change", toggleAddressField);
+deliveryOption.addEventListener("change", toggleAddressField);
+
+function toggleAddressField() {
+    const isDelivery = deliveryOption.checked;
+
+    if (isDelivery) {
+        addressInput.classList.remove("hidden");
+        addressName.classList.remove("hidden")
+    } else {
+        addressInput.classList.add("hidden");
+        addressName.classList.add("hidden")
+        addressInput.value = "";
+    }
+}
+
 
 checkoutBtn.addEventListener("click", function() {
     if (cart.length === 0) return;
